@@ -1,0 +1,13 @@
+sale_id,sale_date,location,product,category,quantity,unit_price_usd
+S001,2027-01-25,Library,Coffee,Drink,12,3.00
+S002,2027-01-25,Library,Tea,Drink,8,2.50
+S003,2027-01-25,Library,Muffin,Food,6,3.50
+S004,2027-01-25,Student Center,Coffee,Drink,15,3.00
+S005,2027-01-25,Student Center,Tea,Drink,5,2.50
+S006,2027-01-25,Student Center,Muffin,Food,10,3.50
+S007,2027-01-26,Library,Coffee,Drink,14,3.00
+S008,2027-01-26,Library,Tea,Drink,7,2.50
+S009,2027-01-26,Library,Muffin,Food,9,3.50
+S010,2027-01-26,Student Center,Coffee,Drink,18,3.00
+S011,2027-01-26,Student Center,Tea,Drink,6,2.50
+S012,2027-01-26,Student Center,Muffin,Food,11,3.50

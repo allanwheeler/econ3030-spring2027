@@ -11,3 +11,6 @@ slides/*_files/
 
 # Instructor solutions stay local.
 **/solutions/
+
+# Local course planning draft.
+/docs/instructor-planning.md

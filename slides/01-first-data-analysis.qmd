@@ -1,6 +1,7 @@
 ---
 title: "A first look at data"
 subtitle: "ECON 3030 | CSU Bakersfield | Spring 2027"
+jupyter: python3
 format:
   revealjs:
     theme: simple
@@ -58,6 +59,38 @@ A bar chart can compare each student’s study hours.
 - A taller bar represents more study time.
 
 Altair describes a chart by connecting table columns to visual features.
+
+## Study hours in our fictional group
+
+```{python}
+#| echo: false
+import altair as alt
+import polars as pl
+from IPython.display import HTML
+
+study = pl.DataFrame({
+    "student": ["A", "B", "C", "D", "E"],
+    "study_hours": [2, 4, 3, 5, 6],
+})
+
+chart = (
+    alt.Chart(study)
+    .mark_bar(color="#2563a6", size=65)
+    .encode(
+        x=alt.X("student:N", title="Student", axis=alt.Axis(labelAngle=0)),
+        y=alt.Y("study_hours:Q", title="Study hours", scale=alt.Scale(domain=[0, 7])),
+        tooltip=[alt.Tooltip("student:N", title="Student"),
+                 alt.Tooltip("study_hours:Q", title="Study hours")],
+    )
+    .properties(width=900, height=340)
+    .configure_axis(labelFontSize=20, titleFontSize=22)
+    .configure_view(stroke=None)
+)
+# Embed chart libraries so the lecture chart works without a CDN connection.
+HTML(chart.to_html(inline=True, fullhtml=False, output_div="study-hours-chart"))
+```
+
+Which student studied the most? How many hours more than student A?
 
 ## What can we conclude?
 

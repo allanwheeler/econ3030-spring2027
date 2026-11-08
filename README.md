@@ -22,8 +22,8 @@ You will do all coding in **Google Colab**, in your browser. You do not need to 
 
 | Stage | Material | Purpose |
 | :--- | :--- | :--- |
-| Lecture | [Slide source](slides/01-first-data-analysis.qmd) | Introduce rows, columns, averages, and charts |
-| Guided practice | [Notebook](notebooks/01-first-data-analysis.ipynb) | Follow a small Polars and Altair analysis in Colab |
+| Lecture | [Slide source](slides/01-first-data-analysis.qmd) | Introduce rows, columns, averages, and charts using a fictional warm-up |
+| Guided practice | [Notebook](notebooks/01-first-data-analysis.ipynb) | Filter historical stock prices, calculate indexes with Polars, and run a prepared Altair chart |
 | Graded lab | [Example assignment](labs/01-first-data-analysis.md) | Apply the same ideas independently and explain a result |
 
 This is a starter repository with one example, not a full semester.
@@ -39,7 +39,7 @@ assets/       Shared images and other course assets
 docs/         Instructor workflow and publishing instructions
 ```
 
-The example data are fictional and embedded in the notebook. No external data service is needed.
+The first guided notebook reads a public historical stock-price CSV from TidyTuesday; a downloaded copy and source notes are in [the data catalog](data/README.md). It requires internet access but no API or account. The existing slides and example lab still use the fictional study-hours warm-up; the example lab has not yet been adapted to the revised notebook.
 
 ## For the instructor
 
