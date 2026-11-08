@@ -1,0 +1,77 @@
+---
+title: "A first look at data"
+subtitle: "ECON 3030 | CSU Bakersfield | Spring 2027"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    self-contained: true
+    transition: none
+---
+
+## Today’s question
+
+How many hours did students in a fictional study group spend studying?
+
+By the end, you can:
+
+- Recognize rows and columns.
+- Calculate an average with Python.
+- Read a simple chart and describe its limits.
+
+## A small dataset
+
+| Student | Study hours |
+| :--- | ---: |
+| A | 2 |
+| B | 4 |
+| C | 3 |
+| D | 5 |
+| E | 6 |
+
+Each **row** describes one student. Each **column** records one characteristic.
+
+These are fictional observations for practice.
+
+## From question to calculation
+
+The mean is the sum of the values divided by the number of values.
+
+$$
+\text{Mean hours} = \frac{2 + 4 + 3 + 5 + 6}{5} = 4
+$$
+
+In Python, a variable gives a name to a value or a table.
+
+```python
+mean_hours = study.select(pl.col("study_hours").mean())
+```
+
+Polars works with tables. This expression selects a column and calculates its mean.
+
+## From table to chart
+
+A bar chart can compare each student’s study hours.
+
+- The horizontal axis identifies the student.
+- The vertical axis measures hours and starts at zero.
+- A taller bar represents more study time.
+
+Altair describes a chart by connecting table columns to visual features.
+
+## What can we conclude?
+
+The average in this fictional group is four hours.
+
+We cannot infer how much all CSU Bakersfield students study from these five fictional observations.
+
+A chart describes these data. It does not show that studying caused a particular grade.
+
+## Guided practice, then lab
+
+1. Open the [guided practice in Colab](https://colab.research.google.com/github/YOUR-GITHUB-USERNAME/econ3030-spring2027/blob/main/notebooks/01-first-data-analysis.ipynb).
+2. Save a copy in Drive and run the setup cell.
+3. Build the table, compute its mean, and draw the chart.
+4. Complete the separate lab instructions in the course LMS.
+
+Pause before running each cell: what do you expect to see?
