@@ -14,7 +14,7 @@ You will do all coding in **Google Colab**, in your browser. You do not need to 
 4. Read each Markdown section and run code cells from top to bottom using the play buttons.
 5. Complete the separate lab and submit your work through the course LMS.
 
-[Open example guided practice in Colab](https://colab.research.google.com/github/YOUR-GITHUB-USERNAME/econ3030-spring2027/blob/main/notebooks/01-first-data-analysis.ipynb)
+[Open example guided practice in Colab](https://colab.research.google.com/github/allanwheeler/econ3030-spring2027/blob/main/notebooks/01-first-data-analysis.ipynb)
 
 **Instructor setup:** replace `YOUR-GITHUB-USERNAME` throughout this repository with the GitHub account or organization that will own the public repository. The Colab link becomes usable after the notebook is published.
 

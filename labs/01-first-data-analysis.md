@@ -4,7 +4,7 @@ Complete this after the lecture and guided practice. This starter assignment has
 
 ## Start in Colab
 
-Open the [guided practice notebook](https://colab.research.google.com/github/YOUR-GITHUB-USERNAME/econ3030-spring2027/blob/main/notebooks/01-first-data-analysis.ipynb) and choose **File → Save a copy in Drive**. Rename your copy `01-lab-your-name`. Keep your practice copy if you want to refer to it.
+Open the [guided practice notebook](https://colab.research.google.com/github/allanwheeler/econ3030-spring2027/blob/main/notebooks/01-first-data-analysis.ipynb) and choose **File → Save a copy in Drive**. Rename your copy `01-lab-your-name`. Keep your practice copy if you want to refer to it.
 
 ## Your task
 

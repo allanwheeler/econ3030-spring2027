@@ -72,7 +72,7 @@ git init -b main
 git add README.md AGENTS.md pyproject.toml uv.lock .gitignore slides notebooks labs data assets docs
 git diff --cached
 git commit -m "Scaffold introductory applied data analysis course"
-git remote add origin https://github.com/YOUR-GITHUB-USERNAME/econ3030-spring2027.git
+git remote add origin https://github.com/allanwheeler/econ3030-spring2027.git
 git push -u origin main
 ```
 

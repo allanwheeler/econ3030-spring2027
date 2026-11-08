@@ -69,7 +69,7 @@ A chart describes these data. It does not show that studying caused a particular
 
 ## Guided practice, then lab
 
-1. Open the [guided practice in Colab](https://colab.research.google.com/github/YOUR-GITHUB-USERNAME/econ3030-spring2027/blob/main/notebooks/01-first-data-analysis.ipynb).
+1. Open the [guided practice in Colab](https://colab.research.google.com/github/allanwheeler/econ3030-spring2027/blob/main/notebooks/01-first-data-analysis.ipynb).
 2. Save a copy in Drive and run the setup cell.
 3. Build the table, compute its mean, and draw the chart.
 4. Complete the separate lab instructions in the course LMS.
