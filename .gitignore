@@ -8,3 +8,6 @@ _site/
 
 # Quarto intermediate resources are embedded in rendered HTML.
 slides/*_files/
+
+# Instructor solutions stay local.
+**/solutions/

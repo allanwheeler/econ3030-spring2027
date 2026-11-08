@@ -21,6 +21,13 @@ This repository is econ3030-spring2027, an introductory applied data analysis co
 - Update direct Colab links if paths or the GitHub owner change.
 - Do not deploy or publish without an explicit request.
 
+# Instructor solutions
+
+- Keep instructor solutions local in `solutions/` directories.
+- Never move, copy, or commit instructor solutions, including excerpts, answers, completed code, or notebook outputs, into public-facing materials such as student notebooks, lab instructions, slides, documentation, rendered HTML, or published assets.
+- Never force-add instructor solutions to Git or bypass the `**/solutions/` ignore rule.
+- `.gitignore` prevents ordinary Git tracking. It is not a security boundary. Check that public-facing changes and publication artifacts contain no instructor solutions before committing or publishing.
+
 # Communication
 
 Be concise. Use bullets when helpful, but never as inline separators. Do not use em dashes, en dashes, or hyphens as sentence punctuation. Do not invoke skills unless explicitly asked.
