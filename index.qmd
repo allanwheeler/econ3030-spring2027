@@ -1,0 +1,18 @@
+---
+title: Analyzing Economic Data
+subtitle: "ECON 3030 | Spring 2027"
+---
+
+California State University, Bakersfield
+
+Learn to ask a question, organize a dataset, make a chart, and explain what the evidence supports. This course offers an accessible introduction to analyzing and visualizing real-world data using spreadsheets and Python. **No prior programming experience is required.**
+
+[View the weekly schedule](schedule.qmd){.btn .btn-primary .mt-3 .mb-4}
+
+## How we learn
+
+Start with a lecture, work through guided practice, then apply your skills in a separate graded lab. We begin with Excel. For Python, we use Google Colab in the browser, with Polars for tables and Altair for charts.
+
+This website brings together slides, notebooks, and datasets. Use **Canvas** for the official syllabus, policies, assignments, submissions, deadlines, announcements, grades, and feedback.
+
+The site is an initial preview. Available materials are listed on the schedule; further materials will be added as they are ready.

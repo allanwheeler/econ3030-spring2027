@@ -1,0 +1,44 @@
+---
+title: Weekly schedule
+---
+
+Follow the sequence **Tuesday lecture → Thursday guided practice → graded lab**. Use Canvas for official assignments and deadlines.
+
+The topics below are tentative planning slots, not calendar dates. Links appear only when materials are available. The syllabus and confirmed schedule will be provided through Canvas.
+
+## Available introductory materials
+
+These examples are available to explore ahead of the Python sequence. The slides use fictional study hours; the notebook applies data preparation to historical stock prices. They are not a complete weekly lesson package.
+
+| Material | Link |
+| :--- | :--- |
+| Lecture slides | [A first look at data](slides/01-first-data-analysis.html) |
+| Guided practice | [Open Big Tech in 2022 in Colab](https://colab.research.google.com/github/allanwheeler/econ3030-spring2027/blob/course-website/notebooks/01-first-data-analysis.ipynb) |
+| Notebook file | [View on GitHub](https://github.com/allanwheeler/econ3030-spring2027/blob/course-website/notebooks/01-first-data-analysis.ipynb) |
+| Stock-price data and definitions | [TidyTuesday source](https://github.com/rfordatascience/tidytuesday/tree/main/data/2023/2023-02-07) |
+| Excel practice data | [Download fictional cafe sales CSV](data/teaching/cafe-sales.csv) |
+
+The cafe dataset describes fictional product sales by date and location. `quantity` counts items; `unit_price_usd` is dollars per item. Revenue is quantity multiplied by unit price. It contains no real people or businesses and is freely reusable.
+
+## Tentative weekly topics
+
+Materials will be linked here as they are released. Lab instructions remain in Canvas; Lab 1 uses Excel.
+
+| Week | Tuesday lecture topic | Thursday guided practice | Lab materials |
+| :--- | :--- | :--- | :--- |
+| 1 | Questions, rows, columns, and Excel tables | Format, sort, and filter a table | |
+| 2 | Excel formulas and cell references | Calculate a column; use SUM and AVERAGE | |
+| 3 | Excel pivot tables and responsible comparisons | Summarize categories | |
+| 4 | Colab, Python names, column types, and a first chart | Save and run a notebook; inspect a table and chart | |
+| 5 | Selecting, filtering, and creating columns | Filter observations and compare summaries | |
+| 6 | Primary keys, foreign keys, and related tables | Check identifiers and references | |
+| 7 | Cardinality and joins | Predict matches and join tables | |
+| 8 | Unmatched records and join validation | Check keys and row counts | |
+| 9 | Grouped summaries and comparisons after joining | Pair a grouped table with a chart | |
+| 10 | Missing values, duplicates, and data checks | Document cleaning decisions | |
+| 11 | Distributions and unusual values | Build a histogram; compare mean and median | |
+| 12 | Combining preparation, summaries, and charts | Work through a small analysis | |
+| 13 | Choosing evidence for a question | Refine a summary table and two charts | |
+| 14 | Writing findings and limitations | Connect evidence to claims | |
+| 15 | Reproducibility and revision | Restart, run all, and review a draft | |
+| 16 | Communicating a finished analysis | Final revisions and submission checks | |

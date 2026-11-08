@@ -41,3 +41,12 @@ This repository is econ3030-spring2027, an introductory applied data analysis co
 # Communication
 
 Be concise. Use bullets when helpful, but never as inline separators. Do not use em dashes, en dashes, or hyphens as sentence punctuation. Do not invoke skills unless explicitly asked.
+
+# Course website
+
+- Render only the three website pages listed in `_quarto.yml`. Never render notebooks or instructor documents in the website build.
+- Publish existing self-contained slide HTML as a resource. Render slide sources separately with `quarto render slides/NAME.qmd`, using the local Python environment, and commit the HTML alongside the source.
+- Add each new public slide or dataset to `_quarto.yml` and `scripts/check-site.sh`. Inspect `_site` before publication. The check must reject unexpected output files.
+- Use relative internal links. Keep notebook links pointed at the branch that contains the released notebook; preview links currently use `course-website`.
+- Keep future schedule topics tentative and course administration in Canvas. Do not publish the legacy Python example lab as the Excel Lab 1.
+- Preview deployment is manual from `course-website`. Do not merge into `main` or change repository visibility without an explicit request.

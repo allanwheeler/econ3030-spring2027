@@ -1,0 +1,52 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - schedule.qmd
+    - resources.qmd
+  resources:
+    - slides/01-first-data-analysis.html
+    - data/teaching/cafe-sales.csv
+    - '!docs/**'
+    - '!**/solutions/**'
+    - '!notebooks/**'
+    - '!labs/**'
+    - '!data/joins/**'
+    - '!data/projects/**'
+    - '!data/teaching/big-tech-stock-prices.csv'
+    - '!AGENTS.md'
+    - '!README.md'
+  post-render:
+    - bash scripts/check-site.sh
+
+website:
+  title: ECON 3030
+  description: Analyzing Economic Data at California State University, Bakersfield, Spring 2027.
+  navbar:
+    background: light
+    left:
+      - href: index.qmd
+        text: Home
+      - href: schedule.qmd
+        text: Schedule
+      - href: resources.qmd
+        text: Resources
+      - text: Slides
+        menu:
+          - text: A first look at data
+            href: slides/01-first-data-analysis.html
+    right:
+      - text: GitHub
+        href: https://github.com/allanwheeler/econ3030-spring2027/tree/course-website
+  page-footer: "ECON 3030 | CSU Bakersfield | Spring 2027. Official course information is in Canvas."
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+    lang: en
+
+execute:
+  enabled: false

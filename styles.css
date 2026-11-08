@@ -1,0 +1,9 @@
+/* Keep the built-in theme and give course pages room to breathe. */
+:root { --bs-link-color: #185c87; --bs-link-hover-color: #103f5d; }
+#quarto-content { padding-top: 2rem; }
+.quarto-title-block .subtitle { color: #52616b; }
+main p, main li { line-height: 1.65; }
+main h2 { margin-top: 2rem; }
+.navbar-brand { font-weight: 600; }
+.table { font-size: 0.95rem; }
+a:focus-visible { outline: 3px solid #185c87; outline-offset: 3px; }

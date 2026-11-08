@@ -14,3 +14,6 @@ slides/*_files/
 
 # Local course planning draft.
 /docs/instructor-planning.md
+
+# Temporary notebooks generated while rendering slides.
+**/*.quarto_ipynb

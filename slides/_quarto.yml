@@ -1,0 +1,5 @@
+# Keep slide execution and Reveal.js formatting separate from the website.
+project:
+  type: default
+  render:
+    - '*.qmd'

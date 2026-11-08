@@ -1,0 +1,32 @@
+---
+title: Resources
+---
+
+## Open a notebook in Google Colab
+
+1. Follow an **Open in Colab** link from the [schedule](schedule.qmd).
+2. Choose **File → Save a copy in Drive** to keep your work. You need a Google account to save a copy, but no GitHub account or local Python installation.
+3. Read the instructions and run the setup cell first. Continue from top to bottom using the play button beside each code cell.
+4. Follow the notebook and Canvas instructions for submitting your work.
+
+Colab needs an internet connection. If a link does not load, check your connection and contact the instructor through Canvas.
+
+## Documentation
+
+These references are available when you need them. You do not need to read them before class.
+
+| Resource | Use it for |
+| :--- | :--- |
+| [Google Colab](https://colab.research.google.com/) | Run Python notebooks in your browser |
+| [Python tutorial](https://docs.python.org/3/tutorial/) | Look up Python language concepts |
+| [Polars user guide](https://docs.pola.rs/) | Work with rows, columns, and summaries |
+| [Altair user guide](https://altair-viz.github.io/) | Describe and create charts |
+| [Course repository](https://github.com/allanwheeler/econ3030-spring2027/tree/course-website) | Browse student notebooks and course files |
+
+## Course administration
+
+**Canvas is the authoritative source** for the official syllabus, policies, assignments, submissions, deadlines, announcements, grades, and feedback. Open the course in your university Canvas account.
+
+## About this website
+
+The site is published with [Quarto](https://quarto.org/). Students do not need to install Quarto or use GitHub to complete course activities.
