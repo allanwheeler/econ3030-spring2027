@@ -51,7 +51,7 @@ uv run python -c "import polars, altair; print(polars.__version__, altair.__vers
 quarto preview slides/01-first-data-analysis.qmd
 ```
 
-Select `.venv/bin/python` as the notebook kernel in your editor. See [the instructor workflow](docs/instructor-workflow.md) for notebook execution checks, HTML rendering, a fresh Colab check, and manual GitHub publishing instructions. Nothing is deployed automatically.
+Select `.venv/bin/python` as the notebook kernel in your editor. See [the instructor workflow](docs/instructor-workflow.md) for notebook execution checks, HTML rendering, a fresh Colab check, and manual GitHub publishing instructions. Pushes to `course-website` publish the website automatically through GitHub Actions.
 
 ## Course website preview
 
@@ -83,66 +83,23 @@ The explicit kernel path avoids selecting an unrelated Anaconda installation. Re
 4. Add the HTML path to `_quarto.yml` under `project.resources` and the Slides menu, and to the allowed paths and required files in `scripts/check-site.sh`.
 5. Add slide links and notebook Colab links to `schedule.qmd`. The preview notebook link uses `https://colab.research.google.com/github/allanwheeler/econ3030-spring2027/blob/course-website/notebooks/NAME.ipynb`. Keep each notebook's own direct link aligned when releasing it on a different branch.
 6. For a downloadable dataset, confirm redistribution terms and document its source, units, and definitions. Add only that file to the resources and publication check. The stock CSV is deliberately excluded from website output while upstream terms remain unresolved.
-7. Render and inspect `_site/`, then commit and push `course-website`. The website does not publish automatically on push.
+7. Render and inspect `_site/`, then commit and push `course-website`. The website publishes automatically on push to `course-website`.
 
-### Cloudflare Pages: automatic deployment from GitHub
+### Publish with GitHub Pages
 
-Connect the private repository through Cloudflare Pages Git integration. Use:
+The public course site is https://www.allanwheeler.com/econ3030-spring2027/. GitHub Pages inherits the account website's custom domain.
 
-| Setting | Value |
-| :--- | :--- |
-| Production branch | `course-website` |
-| Framework preset | None |
-| Build command | `bash scripts/build-cloudflare.sh` |
-| Build output directory | `_site` |
-| Root directory | Leave blank (repository root) |
-
-The build script installs Quarto 1.10.18 on Cloudflare's Linux build host when needed, then renders the three website pages and runs the publication file check. Existing slide HTML is copied without executing slides or notebooks. Cloudflare publishes the contents of `_site`, serving `_site/index.html` as the home page. Do not use the repository root as the output directory.
-
-After setup, pushes to `course-website` automatically update the live site. This supersedes the manual preview deployment convention for this Cloudflare project; GitHub Pages deployment remains tag controlled. The repository stays private while the website is public by default.
-
-Reference: [Cloudflare Git integration](https://developers.cloudflare.com/pages/get-started/git-integration/).
-
-### Cloudflare Pages: manual upload alternative
-
-Keep the GitHub repository private and upload only the checked website output.
-
-1. Run `/Applications/quarto/bin/quarto render` on this computer.
-2. In the Cloudflare dashboard, open **Workers & Pages → Create application → Get started → Drag and drop your files** under Pages.
-3. Name the project `econ3030-spring2027`, upload `_site/` (or a ZIP containing its contents), and select **Deploy site**.
-4. Open the assigned `pages.dev` address and check all three pages and the slides.
-
-For updates, render again and create a new deployment in the same Pages project. Upload only `_site/`, never the repository folder. Direct Upload requires no GitHub connection, Cloudflare build configuration, or API token. A Direct Upload project cannot later switch to Git integration; that requires a new project.
-
-The deployed website is public by default even though the repository is private. The current student Colab links assume public notebook access. Before student use, distribute notebooks through an accessible Google Drive copy or another approved route, and update the links accordingly.
-
-Reference: [Cloudflare Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/).
-
-### GitHub Pages alternative: publish the branch without merging
-
-The Actions workflow builds and checks pushes to `course-website`, but publishes only when you explicitly push a tag beginning `website-preview-`. This works without adding a workflow to `main`, unlike GitHub's manual Run workflow button, which requires the workflow on the default branch.
-
-Initial setup:
-
-1. Review tracked files and Git history before making this repository public. Files excluded from the website remain accessible in a public GitHub repository. Local `solutions/` folders and the ignored instructor planning draft must stay untracked.
-2. GitHub Free requires a public repository for Pages. Eligible paid plans support Pages from private repositories. Student Colab links here assume public notebook access.
-3. In repository **Settings → Pages**, choose **GitHub Actions** as the build and deployment source.
-4. In **Settings → Environments → github-pages**, allow tags matching `website-preview-*` to deploy. Do not restrict this environment to `main`.
-5. Push `course-website`, then publish a reviewed commit using a new preview tag:
+GitHub Actions builds and publishes the checked `_site/` output on every push to `course-website`. No merge into `main` is needed. In repository **Settings → Pages**, the source is **GitHub Actions**. The workflow installs Quarto 1.10.18, renders only the three website pages, checks the publication file list, and deploys the result.
 
 ```sh
 git switch course-website
-git push -u origin course-website
-git tag website-preview-001
-git push origin website-preview-001
-gh run list --workflow website.yml
+git push origin course-website
+gh run list --branch course-website --workflow website.yml
 ```
 
-Use a new tag such as `website-preview-002` for the next publication. Ordinary branch pushes validate the build without changing the public website. Do not create preview tags from another branch.
+Wait for the workflow to succeed and open the site before sharing a new version. The repository is public so students can open the linked notebooks in Colab. Keep local instructor solutions and private planning files untracked; the website publication check does not hide files in a public repository's history.
 
-The workflow uploads checked `_site/` output using GitHub's Pages artifact action, then deploys it. No Python dependencies are installed in CI. Verify the successful deployment and open `https://allanwheeler.github.io/econ3030-spring2027/` before calling the preview live. This is the repository's public site, not an isolated preview per branch. No merge into `main` is required.
-
-References: [Quarto GitHub Pages](https://quarto.org/docs/publishing/github-pages.html) and [GitHub custom Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+Reference: [GitHub custom Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
 ### Adjust the website appearance
 
