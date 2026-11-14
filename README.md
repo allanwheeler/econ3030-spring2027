@@ -85,7 +85,25 @@ The explicit kernel path avoids selecting an unrelated Anaconda installation. Re
 6. For a downloadable dataset, confirm redistribution terms and document its source, units, and definitions. Add only that file to the resources and publication check. The stock CSV is deliberately excluded from website output while upstream terms remain unresolved.
 7. Render and inspect `_site/`, then commit and push `course-website`. The website does not publish automatically on push.
 
-### Cloudflare Pages: simplest deployment
+### Cloudflare Pages: automatic deployment from GitHub
+
+Connect the private repository through Cloudflare Pages Git integration. Use:
+
+| Setting | Value |
+| :--- | :--- |
+| Production branch | `course-website` |
+| Framework preset | None |
+| Build command | `bash scripts/build-cloudflare.sh` |
+| Build output directory | `_site` |
+| Root directory | Leave blank (repository root) |
+
+The build script installs Quarto 1.10.18 on Cloudflare's Linux build host when needed, then renders the three website pages and runs the publication file check. Existing slide HTML is copied without executing slides or notebooks. Cloudflare publishes the contents of `_site`, serving `_site/index.html` as the home page. Do not use the repository root as the output directory.
+
+After setup, pushes to `course-website` automatically update the live site. This supersedes the manual preview deployment convention for this Cloudflare project; GitHub Pages deployment remains tag controlled. The repository stays private while the website is public by default.
+
+Reference: [Cloudflare Git integration](https://developers.cloudflare.com/pages/get-started/git-integration/).
+
+### Cloudflare Pages: manual upload alternative
 
 Keep the GitHub repository private and upload only the checked website output.
 
