@@ -85,7 +85,22 @@ The explicit kernel path avoids selecting an unrelated Anaconda installation. Re
 6. For a downloadable dataset, confirm redistribution terms and document its source, units, and definitions. Add only that file to the resources and publication check. The stock CSV is deliberately excluded from website output while upstream terms remain unresolved.
 7. Render and inspect `_site/`, then commit and push `course-website`. The website does not publish automatically on push.
 
-### Publish the branch without merging
+### Cloudflare Pages: simplest deployment
+
+Keep the GitHub repository private and upload only the checked website output.
+
+1. Run `/Applications/quarto/bin/quarto render` on this computer.
+2. In the Cloudflare dashboard, open **Workers & Pages → Create application → Get started → Drag and drop your files** under Pages.
+3. Name the project `econ3030-spring2027`, upload `_site/` (or a ZIP containing its contents), and select **Deploy site**.
+4. Open the assigned `pages.dev` address and check all three pages and the slides.
+
+For updates, render again and create a new deployment in the same Pages project. Upload only `_site/`, never the repository folder. Direct Upload requires no GitHub connection, Cloudflare build configuration, or API token. A Direct Upload project cannot later switch to Git integration; that requires a new project.
+
+The deployed website is public by default even though the repository is private. The current student Colab links assume public notebook access. Before student use, distribute notebooks through an accessible Google Drive copy or another approved route, and update the links accordingly.
+
+Reference: [Cloudflare Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/).
+
+### GitHub Pages alternative: publish the branch without merging
 
 The Actions workflow builds and checks pushes to `course-website`, but publishes only when you explicitly push a tag beginning `website-preview-`. This works without adding a workflow to `main`, unlike GitHub's manual Run workflow button, which requires the workflow on the default branch.
 
@@ -110,3 +125,9 @@ Use a new tag such as `website-preview-002` for the next publication. Ordinary b
 The workflow uploads checked `_site/` output using GitHub's Pages artifact action, then deploys it. No Python dependencies are installed in CI. Verify the successful deployment and open `https://allanwheeler.github.io/econ3030-spring2027/` before calling the preview live. This is the repository's public site, not an isolated preview per branch. No merge into `main` is required.
 
 References: [Quarto GitHub Pages](https://quarto.org/docs/publishing/github-pages.html) and [GitHub custom Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+### Adjust the website appearance
+
+The website layers `theme.scss` over the selected Quarto theme in `_quarto.yml`. It uses neutral colors, system fonts, subtle borders, and rounded controls inspired by Basecoat while retaining Quarto's Bootstrap markup. No Basecoat, Tailwind, or additional JavaScript is installed.
+
+Edit `theme.scss` for colors, fonts, and Bootstrap component defaults. Edit `styles.css` for navigation, title, table, and spacing details. Run `quarto preview` while editing. To compare the built-in theme, temporarily remove `theme.scss` from the theme list and comment out `css: styles.css`. Reveal.js slides use their separate configuration.

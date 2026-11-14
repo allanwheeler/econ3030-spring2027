@@ -17,3 +17,5 @@ slides/*_files/
 
 # Temporary notebooks generated while rendering slides.
 **/*.quarto_ipynb
+
+/.quarto/

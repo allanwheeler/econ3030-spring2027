@@ -39,11 +39,13 @@ website:
     right:
       - text: GitHub
         href: https://github.com/allanwheeler/econ3030-spring2027/tree/course-website
-  page-footer: "ECON 3030 | CSU Bakersfield | Spring 2027. Official course information is in Canvas."
+  page-footer: 'ECON 3030 | CSU Bakersfield | Spring 2027. Official course information is in Canvas.'
 
 format:
   html:
-    theme: cosmo
+    theme:
+      - litera
+      - theme.scss
     css: styles.css
     toc: false
     lang: en
